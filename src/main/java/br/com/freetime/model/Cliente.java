@@ -29,9 +29,7 @@ public class Cliente {
 	
 	private Date dataCadastro;
 	
-	public Cliente() {
-		// TODO Auto-generated constructor stub
-	}
+	public Cliente() {}
 
 	public Cliente(String nome, Endereco endereco, List<Perfil> perfis, int idade, Date dataNascimento,
 			Date dataCadastro) {
@@ -43,8 +41,6 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 		this.dataCadastro = dataCadastro;
 	}
-
-
 
 	public long getId() {
 		return id;

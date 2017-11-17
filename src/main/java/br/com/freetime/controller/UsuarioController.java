@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import javax.validation.Valid;
+import javax.websocket.server.PathParam;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ import br.com.freetime.exception.CampoObrigatorioException;
 import br.com.freetime.exception.EnderecoException;
 import br.com.freetime.model.Greeting;
 import br.com.freetime.model.Usuario;
-import br.com.freetime.service.UsuarioServiceImpl;
+import br.com.freetime.service.impl.UsuarioServiceImpl;
 
 @RestController
 @RequestMapping("/usuario")
@@ -71,7 +72,7 @@ public class UsuarioController {
 	
 	@DeleteMapping("/{login}")
 	@ResponseBody
-	public ResponseEntity<Usuario> deletar(@RequestParam("login") String login) throws EnderecoException, CampoObrigatorioException{
+	public ResponseEntity<Usuario> deletar(@PathParam("login") String login) throws EnderecoException, CampoObrigatorioException{
 		logger.info("Rest deletar usuario");
 		if(login == null){
 			throw new CampoObrigatorioException("Campo ID e obrigatorio para exclusao!");
@@ -82,7 +83,7 @@ public class UsuarioController {
 	
 	@PutMapping("/{login}")
 	@ResponseBody
-	public ResponseEntity<Usuario> atualizar(@RequestBody @Valid Usuario usuario, BindingResult bindingResult) throws EnderecoException, CampoObrigatorioException{
+	public ResponseEntity<Usuario> atualizar(@PathParam("login") String login, @RequestBody @Valid Usuario usuario, BindingResult bindingResult) throws EnderecoException, CampoObrigatorioException{
 		logger.info("Rest atualizar usuario");
 		if(bindingResult.hasErrors()){
 			throw new CampoObrigatorioException(bindingResult);
@@ -90,7 +91,7 @@ public class UsuarioController {
 			throw new CampoObrigatorioException("Campo ID e obrigatorio para atualizar!");
 		}
 		//Util.validar(endereco.getCep());
-		usuarioService.atualizar(usuario);
+		usuarioService.atualizar(login, usuario);
 		return new ResponseEntity<Usuario>(HttpStatus.OK);
 	}
 	

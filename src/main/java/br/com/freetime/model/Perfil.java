@@ -1,5 +1,11 @@
 package br.com.freetime.model;
 
-public class Perfil {
+import java.util.List;
 
+public class Perfil {
+//BI questions
+	
+	private long raioDeBusca;
+	
+	private List<Categoria> interesses;
 }

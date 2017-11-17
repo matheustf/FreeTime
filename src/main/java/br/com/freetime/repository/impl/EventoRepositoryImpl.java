@@ -1,4 +1,4 @@
-package br.com.freetime.repository;
+package br.com.freetime.repository.impl;
 
 import java.util.List;
 
@@ -10,23 +10,25 @@ import javax.persistence.Query;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
+import br.com.freetime.model.Evento;
 import br.com.freetime.model.Usuario;
+import br.com.freetime.repository.custom.EventoRepositoryCustom;
 
 @Repository
-public class ClienteRepositoryImpl implements UsuarioRepositoryCustom {
+public class EventoRepositoryImpl implements EventoRepositoryCustom {
 
 	@PersistenceContext
 	private EntityManager em;
 
-	List<Usuario> buscarClientes() {
-		Query query = em.createQuery("select * from Cliente u ");
+	List<Evento> buscarClientes() {
+		Query query = em.createQuery("select * from Evento ");
 		
-		List<Usuario> clientes = query.getResultList();
+		List<Evento> eventos = query.getResultList();
 
 		try {
-			return clientes;
+			return eventos;
 		} catch (NoResultException ex) {
-			throw new UsernameNotFoundException("Usuarios não foi encontrado");
+			throw new UsernameNotFoundException("Eventos não foram encontrados");
 		}
 	}
 

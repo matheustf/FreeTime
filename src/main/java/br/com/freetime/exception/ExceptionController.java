@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import br.com.freetime.service.UsuarioServiceImpl;
+import br.com.freetime.service.impl.UsuarioServiceImpl;
 
 @ControllerAdvice
 public class ExceptionController {

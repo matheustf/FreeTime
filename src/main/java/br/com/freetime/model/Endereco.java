@@ -19,9 +19,7 @@ public class Endereco {
 	
 	private Pais pais;
 	
-	public Endereco() {
-		// TODO Auto-generated constructor stub
-	}
+	public Endereco() {}
 
 	public Endereco(String cep, String logradouro, String numero, String complemento, String bairro, Pais pais) {
 		super();

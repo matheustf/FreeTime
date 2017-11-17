@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.freetime.model.Usuario;
+import br.com.freetime.repository.custom.UsuarioRepositoryCustom;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>,UsuarioRepositoryCustom {
 

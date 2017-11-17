@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.freetime.exception.CampoObrigatorioException;
 import br.com.freetime.exception.EnderecoException;
 import br.com.freetime.model.Cliente;
-import br.com.freetime.service.ClienteServiceImpl;
+import br.com.freetime.service.impl.ClienteServiceImpl;
 
 @RestController
 @RequestMapping("/cliente")

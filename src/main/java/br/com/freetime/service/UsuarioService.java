@@ -9,5 +9,6 @@ public interface UsuarioService {
 
 	void deletar(String login) throws CampoObrigatorioException;
 
-	void atualizar(Usuario usuario) throws CampoObrigatorioException;
+	public void atualizar(String login, Usuario usuarioAtual) throws CampoObrigatorioException;
+	
 }

@@ -1,4 +1,4 @@
-package br.com.freetime.repository;
+package br.com.freetime.repository.impl;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
 import br.com.freetime.model.Usuario;
+import br.com.freetime.repository.custom.UsuarioRepositoryCustom;
 
 @Repository
 public class UsuarioRepositoryImpl implements UsuarioRepositoryCustom {
@@ -26,7 +27,7 @@ public class UsuarioRepositoryImpl implements UsuarioRepositoryCustom {
 		try {
 			return usuarios;
 		} catch (NoResultException ex) {
-			throw new UsernameNotFoundException("Usuarios não foi encontrado");
+			throw new UsernameNotFoundException("Usuarios não foram encontrados");
 		}
 	}
 

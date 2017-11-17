@@ -1,4 +1,4 @@
-package br.com.freetime.service;
+package br.com.freetime.service.impl;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.freetime.exception.CampoObrigatorioException;
 import br.com.freetime.model.Cliente;
 import br.com.freetime.repository.ClienteRepository;
+import br.com.freetime.service.ClienteService;
 
 @Service
 public class ClienteServiceImpl implements ClienteService{

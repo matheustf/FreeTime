@@ -1,5 +1,7 @@
 package br.com.freetime.model;
 
+import java.math.BigDecimal;
+
 public class Produto extends Evento{
 
 	private int quantidade;
@@ -8,7 +10,7 @@ public class Produto extends Evento{
 	
 	private int idadeMaxima;
 	
-	private int valor;
+	private BigDecimal valor;
 	
 	private TipoProduto tipoProduto;
 	

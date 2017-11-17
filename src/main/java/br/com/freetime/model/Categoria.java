@@ -7,19 +7,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TipoShow")
-public class TipoShow {
+@Table(name = "Categoria")
+public class Categoria {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
-
+	
 	private String nome;
+	
+	public Categoria() {}
 
-	public TipoShow() {
-	}
-
-	public TipoShow(String nome) {
+	public Categoria(String nome) {
+		super();
 		this.setNome(nome);
 	}
 
@@ -30,5 +30,5 @@ public class TipoShow {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+	
 }

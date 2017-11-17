@@ -1,4 +1,4 @@
-package br.com.freetime.service;
+package br.com.freetime.service.impl;
 
 import java.util.List;
 
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import br.com.freetime.exception.CampoObrigatorioException;
 import br.com.freetime.model.Usuario;
 import br.com.freetime.repository.UsuarioRepository;
+import br.com.freetime.service.UsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
@@ -54,13 +55,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void atualizar(Usuario usuarioAtual) throws CampoObrigatorioException {
+	public void atualizar(String login, Usuario usuarioAtual) throws CampoObrigatorioException {
 		logger.info("Atualizando usuario...");
 		/* Pega o CEP elaborado na função buscaCep,
 		 * caso o CEP não seja encontrado de primeira
 		 * ira atribuir o primeiro CEP encontrado no algorítimo.
 		 */
-		Usuario usuario = usuarioRepository.findByLoginStartsWithIgnoreCase(usuarioAtual.getLogin());
+		Usuario usuario = usuarioRepository.findByLoginStartsWithIgnoreCase(login);
 		if(usuario == null){
 			logger.error("Erro ao atualizar Usuario!");
 			throw new CampoObrigatorioException("Usuario Nao encontrado para ser excluido!");

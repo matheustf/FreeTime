@@ -10,15 +10,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by odilon-jr on 17/07/17.
- */
 @Table(name = "usuarios")
 @Entity
 public class Usuario implements UserDetails {
 
+	private static final long serialVersionUID = 1L;
+
 	public Usuario() {
-		
 	}
 	
 	public Usuario(String login, String password, String name) {
