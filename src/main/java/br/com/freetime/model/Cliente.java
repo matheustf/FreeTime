@@ -23,21 +23,18 @@ public class Cliente {
 
 	private List<Perfil> perfis;
 
-	private int idade;
-	
 	private Date dataNascimento;
 	
 	private Date dataCadastro;
 	
 	public Cliente() {}
 
-	public Cliente(String nome, Endereco endereco, List<Perfil> perfis, int idade, Date dataNascimento,
+	public Cliente(String nome, Endereco endereco, List<Perfil> perfis, Date dataNascimento,
 			Date dataCadastro) {
 		super();
 		this.nome = nome;
 		this.endereco = endereco;
 		this.perfis = perfis;
-		this.idade = idade;
 		this.dataNascimento = dataNascimento;
 		this.dataCadastro = dataCadastro;
 	}
@@ -66,14 +63,6 @@ public class Cliente {
 		this.endereco = endereco;
 	}
 
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-	
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}

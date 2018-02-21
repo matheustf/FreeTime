@@ -30,6 +30,8 @@ public class Evento {
 	
 	private int quantidadePessoas;
 	
+	private List<Cliente> pessoasInscritas;
+	
 	private String descricao;
 	
 	private String informacoes;
